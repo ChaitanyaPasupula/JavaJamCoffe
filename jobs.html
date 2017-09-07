@@ -1,0 +1,91 @@
+<!DOCTYPE html >
+<html >
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>JavaJam Coffe House</title>
+   <link rel="stylesheet" type="text/css" href="javajam.css">
+   <script type="text/javascript">
+        function validateForm() {
+
+        	var name = document.getElementById('name');
+            var experience = document.getElementById('experience');
+            var email = document.getElementById('email');
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+            if(name.value=="") {
+                alert("enter your name ");
+                return false;
+            }
+            if(name.value.length >=15){
+            	alert("Name Maximum 15 characters only")
+            	return false
+            }
+            if(document.getElementById('email').value=="") {
+                alert("enter your email");
+                return false;
+            }
+            if (!filter.test(email.value)) {
+            alert('Please provide a valid email address');
+            email.focus;
+             return false;
+           }
+            if(experience.value=="") {
+                alert("enter your Experience");
+                return false;
+            }
+            if(experience.length>150){
+            	alert("Experience Maximum 150 characters");
+            	return false;
+            }  
+
+             
+        }
+    </script>
+</head>
+
+<body>
+<div id="wrapper">
+
+    <div id="header">
+    <img src="javajamlogo.jpg" alt="logo"/>
+    <h1>JavaJam Coffee House</h1>
+    </div>
+    <main> 
+       <h3 class="text">Jobs at JavaJam</h3>
+     <p class="text">Want to work at JavaJam? Fill out the form below to start your application.Required fields are marked with an asterisk(*).</p>
+    	
+      <form id="from" method="post" action="action.html" onsubmit="return validateForm();">
+    &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  <label for="name">* Name:</label>
+    <input type="text" name="myName" id="name"
+     placeholder="first and last name" required>
+    <br><br>
+    &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="email">* E-mail:</label>
+    <input type="text" name="myEmail" id="email"
+     placeholder="you@yourdomain.com" required>
+    <br><br>
+    &nbsp; &nbsp;&nbsp;<label for="experience">*Experience:</label>
+    <textarea name="myExperience" id="experience" rows="2" cols="20" required ></textarea><br><br>
+  <input id="mySubmit" type="submit" value="Apply Now" />
+    
+    <br>
+  </form>
+
+
+    </main>
+    <div id="nav">
+    	<nav>
+    <ul>
+     <li><a  href="home.html">Home</a></li>
+     <li> <a  href="menu.html">Menu</a> </li>
+      <li><a  href="music.html">Music</a> </li>
+      <li><a  href="jobs.html">Jobs</a> </li>
+     </ul>
+  </nav>
+    </div>
+    
+    <footer> <p><i>Copyright &copy; 2016 JavaJam Coffee House</i><br>
+    <a  href="Chaitanya@Pasupula.com"><i>chaitanya@pasupula.com</i></a></p></footer>
+</div>
+</body>
+</html>
